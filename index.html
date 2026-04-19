@@ -219,6 +219,8 @@ footer { border-top: 1px solid var(--border); padding: 48px 0; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
   .waitlist-form { flex-direction: column; }
+  #screenshots .fade-up > div { grid-template-columns: 1fr !important; max-width: 280px !important; }
+  #screenshots .fade-up > div > div { margin-top: 0 !important; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 }
@@ -285,33 +287,12 @@ footer { border-top: 1px solid var(--border); padding: 48px 0; }
         </div>
       </div>
       <div class="hero-visual fade-up" style="transition-delay:.2s">
-        <div class="phone-frame">
+        <div class="phone-frame" style="padding:0;overflow:hidden;position:relative">
           <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="mock-header">Abril 2026</div>
-            <div class="mock-sub">Resumen del mes</div>
-            <div class="mock-kpi-row">
-              <div class="mock-kpi"><div class="mock-kpi-label">Ingresos</div><div class="mock-kpi-val green">$2.450</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-label">Gastos</div><div class="mock-kpi-val red">$1.820</div></div>
-            </div>
-            <div class="mock-chart">
-              <div class="mock-chart-title">Evolución anual</div>
-              <div class="mock-bars">
-                <div class="mock-bar" style="height:45%"></div><div class="mock-bar" style="height:62%"></div><div class="mock-bar" style="height:38%"></div>
-                <div class="mock-bar" style="height:70%"></div><div class="mock-bar" style="height:55%"></div><div class="mock-bar" style="height:80%"></div>
-                <div class="mock-bar" style="height:65%"></div><div class="mock-bar" style="height:72%"></div><div class="mock-bar" style="height:50%"></div>
-                <div class="mock-bar" style="height:85%"></div><div class="mock-bar" style="height:60%"></div><div class="mock-bar" style="height:90%"></div>
-              </div>
-            </div>
-            <div class="mock-cats">
-              <div class="mock-cat"><div class="mock-cat-dot" style="background:#c5a76e"></div><div class="mock-cat-name">Alimentación</div><div class="mock-cat-amt">$580</div></div>
-              <div class="mock-cat"><div class="mock-cat-dot" style="background:#8b2d4a"></div><div class="mock-cat-name">Transporte</div><div class="mock-cat-amt">$340</div></div>
-              <div class="mock-cat"><div class="mock-cat-dot" style="background:#1fba87"></div><div class="mock-cat-name">Servicios</div><div class="mock-cat-amt">$290</div></div>
-            </div>
-          </div>
+          <img src="captura de pantalla del panel de control.jpeg" alt="Martifin Dashboard" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:34px">
         </div>
-        <div class="float-card fc1"><div class="fc-label">Tasa de ahorro</div><div class="fc-val green">25.7%</div></div>
-        <div class="float-card fc2"><div class="fc-label">Meta: Viaje</div><div class="fc-val gold">68% ✓</div></div>
+        <div class="float-card fc1"><div class="fc-label">Tasa de ahorro</div><div class="fc-val green">30.1%</div></div>
+        <div class="float-card fc2"><div class="fc-label">Meta: Viaje</div><div class="fc-val green">100% ✓</div></div>
       </div>
     </div>
   </div>
@@ -400,6 +381,41 @@ footer { border-top: 1px solid var(--border); padding: 48px 0; }
       <div class="step-card fade-up" style="transition-delay:.3s"><div class="step-num">07</div><h3>Maximizá ingresos</h3><p>Hacé que tu trabajo refleje tus valores y tu propósito de vida.</p></div>
       <div class="step-card fade-up" style="transition-delay:.35s"><div class="step-num">08</div><h3>El punto de cruce</h3><p>Cuando tus inversiones generan más que tus gastos. La meta final.</p></div>
       <div class="step-card fade-up" style="transition-delay:.4s"><div class="step-num">09</div><h3>Invertir para la independencia</h3><p>Poné tu capital a trabajar de forma informada y consistente.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCREENSHOTS REALES ──────────────────────────────────────────────── -->
+<section class="section" id="screenshots" style="background:var(--bg2)">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px">
+      <div class="section-label">La app real</div>
+      <div class="gold-line center"></div>
+      <div class="section-title">Así se ve Martifin</div>
+      <div class="section-subtitle" style="margin:0 auto">Sin filtros. Lo que instalás es lo que ves.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto" class="fade-up">
+      <div style="text-align:center">
+        <div style="background:var(--bg3);border-radius:28px;border:1.5px solid var(--border2);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);max-width:220px;margin:0 auto">
+          <img src="captura de pantalla del panel de control.jpeg" alt="Dashboard Martifin" style="width:100%;display:block">
+        </div>
+        <div style="margin-top:14px;font-size:14px;font-weight:600;color:var(--text)">Resumen</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:4px">KPIs, gráficos y categorías en un vistazo</div>
+      </div>
+      <div style="text-align:center;margin-top:32px">
+        <div style="background:var(--bg3);border-radius:28px;border:1.5px solid var(--border2);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);max-width:220px;margin:0 auto">
+          <img src="captura-tendencias.jpeg" alt="Tendencias Martifin" style="width:100%;display:block">
+        </div>
+        <div style="margin-top:14px;font-size:14px;font-weight:600;color:var(--text)">Tendencias</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:4px">Tu tasa de ahorro y progreso mes a mes</div>
+      </div>
+      <div style="text-align:center">
+        <div style="background:var(--bg3);border-radius:28px;border:1.5px solid var(--border2);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);max-width:220px;margin:0 auto">
+          <img src="captura-metas.jpeg" alt="Metas Martifin" style="width:100%;display:block">
+        </div>
+        <div style="margin-top:14px;font-size:14px;font-weight:600;color:var(--text)">Metas</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:4px">Seguí el progreso de tus objetivos de ahorro</div>
+      </div>
     </div>
   </div>
 </section>
