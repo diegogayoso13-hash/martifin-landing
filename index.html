@@ -510,9 +510,34 @@ function toggleFaq(btn) { const item = btn.parentElement; const wasOpen = item.c
 async function handleWaitlist(e) {
   e.preventDefault();
   const email = document.getElementById('waitlistEmail').value;
-  try { await fetch('https://zfoetyauhauztkkltjaz.supabase.co/rest/v1/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json', 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpmb2V0eWF1aGF1enRra2x0amF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0OTQ4NDIsImV4cCI6MjA1ODA3MDg0Mn0.LMAlHB9MRE3MRKmMjsGYjRb6x5e2zX2GtNr7eLHJnoE', 'Prefer': 'return=minimal' }, body: JSON.stringify({ email, created_at: new Date().toISOString() }) }); } catch(err) { console.log('Waitlist:', err); }
-  document.getElementById('waitlistMsg').style.display = 'block';
-  e.target.style.display = 'none';
+  const btn = e.target.querySelector('button');
+  btn.textContent = '...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://zfoetyauhauztkkltjaz.supabase.co/rest/v1/waitlist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'sb_publishable_v46DhQgi48QpamiqYzMfwQ_7wrKKLc0',
+        'Authorization': 'Bearer sb_publishable_v46DhQgi48QpamiqYzMfwQ_7wrKKLc0',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ email })
+    });
+    if (res.ok || res.status === 409) {
+      // 409 = email ya registrado, igual mostramos éxito
+      document.getElementById('waitlistMsg').style.display = 'block';
+      e.target.style.display = 'none';
+    } else {
+      btn.textContent = 'Unirme';
+      btn.disabled = false;
+      alert('Hubo un error. Intentá de nuevo.');
+    }
+  } catch(err) {
+    console.log('Waitlist error:', err);
+    btn.textContent = 'Unirme';
+    btn.disabled = false;
+  }
 }
 const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
